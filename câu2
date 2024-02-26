@@ -1,15 +1,33 @@
-""""
- * Tính tổng của các chữ số của một số nguyên dương n
- *
- * @param n: số nguyên dương
- * @return
-"""
-def totalDigitsOfNumber(n):
-    total = 0;
-    while (n > 0):
-        total = total + n % 10;
-        n = int(n / 10);
-    return total;
- 
-n = int(input("Nhập số nguyên dương n = "));
-print("Tổng các chữ số của", n , "là", totalDigitsOfNumber(n));
+#include <iostream>
+
+// Hàm tính tổng các chữ số của một số nguyên
+int calculateDigitSum(int num) {
+    int sum = 0;
+    while (num > 0) {
+        sum += num % 10;
+        num /= 10;
+    }
+    return sum;
+}
+
+int main() {
+    int n;
+
+    // Nhập vào số nguyên dương n từ bàn phím
+    std::cout << "Nhap vao so nguyen duong n: ";
+    std::cin >> n;
+
+    // Kiểm tra n có là số nguyên dương không
+    if (n <= 0) {
+        std::cerr << "Vui long nhap so nguyen duong." << std::endl;
+        return 1;  // Kết thúc chương trình với mã lỗi 1
+    }
+
+    // Tính tổng các chữ số của n bằng hàm
+    int sum = calculateDigitSum(n);
+
+    // In ra kết quả
+    std::cout << "Tong cac chu so cua " << n << " la: " << sum << std::endl;
+
+    return 0;
+}

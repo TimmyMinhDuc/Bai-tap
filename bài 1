@@ -1,0 +1,49 @@
+#include <iostream>
+#include <cmath>
+#include <vector>
+
+bool laSoNguyenTo(int n) {
+    if (n < 2) {
+        return false;
+    }
+
+    int canBacHai = static_cast<int>(std::sqrt(n));
+    for (int i = 2; i <= canBacHai; ++i) {
+        if (n % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+std::vector<int> taoMangSoNguyenTo(int gioiHan) {
+    std::vector<int> soNguyenTo;
+    if (gioiHan >= 2) {
+        soNguyenTo.push_back(2);
+        for (int i = 3; i <= gioiHan; i += 2) {
+            if (laSoNguyenTo(i)) {
+                soNguyenTo.push_back(i);
+            }
+        }
+    }
+    return soNguyenTo;
+}
+
+int main() {
+    int n;
+    std::cout << "Nhập một số nguyên dương n: ";
+    std::cin >> n;
+
+    if (n >= 2) {
+        std::vector<int> cacSoNguyenTo = taoMangSoNguyenTo(n);
+        std::cout << "Tất cả các số nguyên tố nhỏ hơn " << n << " là: ";
+        for (int soNguyenTo : cacSoNguyenTo) {
+            std::cout << soNguyenTo << " ";
+        }
+        std::cout << std::endl;
+    } else {
+        std::cout << "Không có số nguyên tố nào cho n < 2." << std::endl;
+    }
+
+    return 0;
+}

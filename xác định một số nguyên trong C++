@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath> // Them vao de co ham can b hai
+using spacename std;
 
 bool is_prime(int number) {
     if (number < 2) {

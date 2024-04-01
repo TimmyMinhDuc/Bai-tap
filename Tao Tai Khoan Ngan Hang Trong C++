@@ -3,48 +3,49 @@
 
 using namespace std;
 
-class TaiKhoan {
+class TaiKhoanNganHang {
 private:
-    string chuSoHuu;
+    string chuTaiKhoan;
     double soDuVND;
+    const double QUY_DOI = 24613;
 
 public:
-    TaiKhoan(string chuSoHuu, double soDuVND) : chuSoHuu(chuSoHuu), soDuVND(soDuVND) {}
+    TaiKhoanNganHang(const string& chuTaiKhoan, double soDuVND) : chuTaiKhoan(chuTaiKhoan), soDuVND(soDuVND) {}
 
-    string getChuSoHuu() const {
-        return chuSoHuu;
+    string getChuTaiKhoan() const {
+        return chuTaiKhoan;
     }
 
     double getSoDuVND() const {
         return soDuVND;
     }
 
-    void guiTien(double soTienVND) {
-        soDuVND += soTienVND;
+    void deposit(double soLuongVND) {
+        soDuVND += soLuongVND;
     }
 
-    void rutTien(double soTienVND) {
-        if (soTienVND > soDuVND) {
-            cout << "So du tai khoan khong du de rut" << endl;
+    void withdraw(double soLuongVND) {
+        if (soLuongVND > soDuVND) {
+            cout << "Insufficient funds" << endl;
         } else {
-            soDuVND -= soTienVND;
+            soDuVND -= soLuongVND;
         }
     }
 
     double getSoDuUSD() const {
-        return soDuVND / 24000;
+        return soDuVND / QUY_DOI;
     }
 };
 
 int main() {
-    TaiKhoan taiKhoan("Bui Luong Minh Duc", 1000000);
+    TaiKhoanNganHang account("Minh DUc Bui", 1000000.0);
 
-    cout << "Chu so huu tai khoan la: " << taiKhoan.getChuSoHuu() << endl;
-    cout << "So du trong tai khoan: " << taiKhoan.getSoDuVND() << " VND (" << taiKhoan.getSoDuUSD() << " USD)" << endl;
+    cout << "Account owner: " << account.getChuTaiKhoan() << endl;
+    cout << "Account balance: " << account.getSoDuVND() << " VND (" << account.getSoDuUSD() << " USD)" << endl;
 
-    taiKhoan.guiTien(500000);
-    taiKhoan.rutTien(250000);
-    taiKhoan.rutTien(200000);
+    account.deposit(5000000);
+    account.withdraw(350000);
+    account.withdraw(200000);
 
     return 0;
 }

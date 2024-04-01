@@ -41,14 +41,15 @@ public:
 };
 
 int main() {
-    TaiKhoan taiKhoan("Bui Luong Minh Duc", 100000);
+    TaiKhoan taiKhoan("Bui Luong Minh Duc", 24000);
 
     std::cout << "Chu so huu tai khoan: " << taiKhoan.getChuSoHuu() << std::endl;
     std::cout << "So du tai khoan: " << taiKhoan.getSoDuVND() << " VND (" << taiKhoan.getSoDuUSD() << " USD)" << std::endl;
 
-    taiKhoan.guiTien(50000);
+    taiKhoan.guiTien(42000);
     taiKhoan.rutTien(30000);
-    taiKhoan.rutTien(20000);
+    taiKhoan.guiTien(62000);
+    taiKhoan.rutTien(50000);
 
     return 0;
 }

@@ -4,14 +4,14 @@ using namespace std;
 
 class TaiKhoan {
 private:
-    std::string chuSoHuu;
+    string chuSoHuu;
     double soDuVND;
     const double TY_LE_DOI = 24000; 
 
 public:
-    TaiKhoan(const std::string& chuSoHuu, double soDuVND) : chuSoHuu(chuSoHuu), soDuVND(soDuVND) {}
+    TaiKhoan(string chuSoHuu, double soDuVND) : chuSoHuu(chuSoHuu), soDuVND(soDuVND) {}
 
-    std::string getChuSoHuu() const {
+    string getChuSoHuu() const {
         return chuSoHuu;
     }
 

@@ -1,0 +1,51 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class BankAccount {
+private:
+    string ownerName;
+    double balanceVND;
+    const double EXCHANGE_RATE = 24613; // Constant exchange rate
+
+public:
+    BankAccount(const string& ownerName, double balanceVND) : ownerName(ownerName), balanceVND(balanceVND) {}
+
+    string getOwnerName() const {
+        return ownerName;
+    }
+
+    double getBalanceVND() const {
+        return balanceVND;
+    }
+
+    void deposit(double amountVND) {
+        balanceVND += amountVND;
+    }
+
+    void withdraw(double amountVND) {
+        if (amountVND > balanceVND) {
+            cout << "Insufficient funds" << endl;
+        } else {
+            balanceVND -= amountVND;
+        }
+    }
+
+    double getBalanceUSD() const {
+        return balanceVND / EXCHANGE_RATE;
+    }
+};
+
+int main() {
+    BankAccount account("John Doe", 1000000000);
+
+    cout << "Account owner: " << account.getOwnerName() << endl;
+    cout << "Account balance: " << account.getBalanceVND() << " VND (" << account.getBalanceUSD() << " USD)" << endl;
+
+    account.deposit(5000000);
+    account.withdraw(350000);
+    account.withdraw(200000);
+
+    return 0;
+}

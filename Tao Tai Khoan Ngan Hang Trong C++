@@ -37,7 +37,7 @@ public:
 };
 
 int main() {
-    TaiKhoan taiKhoan("Bui Luong Minh Duc", 1000000000);
+    TaiKhoan taiKhoan("Bui Luong Minh Duc", 1000000);
 
     cout << "Chu so huu tai khoan la: " << taiKhoan.getChuSoHuu() << endl;
     cout << "So du trong tai khoan: " << taiKhoan.getSoDuVND() << " VND (" << taiKhoan.getSoDuUSD() << " USD)" << endl;

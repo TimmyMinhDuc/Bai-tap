@@ -32,7 +32,7 @@ public:
     }
 
     double getSoDuUSD() const {
-        return soDuVND / 24613;
+        return soDuVND / 24000;
     }
 };
 

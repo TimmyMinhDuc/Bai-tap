@@ -1,0 +1,59 @@
+#include <iostream>
+#include <cmath> // Thư viện này cần thiết cho hàm sqrt và pow
+
+class Point {
+private:
+    double x, y;
+
+public:
+    // Hàm khởi tạo mặc định
+    Point() : x(0), y(0) {}
+
+    // Hàm khởi tạo với 2 tham số
+    Point(double x, double y) : x(x), y(y) {}
+
+    // Setters
+    void setX(double x) {
+        this->x = x;
+    }
+
+    void setY(double y) {
+        this->y = y;
+    }
+
+    void setXY(double x, double y) {
+        this->x = x;
+        this->y = y;
+    }
+
+    // Getters
+    double getX() const {
+        return x;
+    }
+
+    double getY() const {
+        return y;
+    }
+
+    // Phương thức tính khoảng cách đến một điểm khác
+    double distance(double x, double y) {
+        return sqrt(pow(this->x - x, 2) + pow(this->y - y, 2));
+    }
+
+    // Phương thức tính khoảng cách đến một điểm khác (dùng đối tượng Point)
+    double distance(const Point& another) {
+        return sqrt(pow(this->x - another.x, 2) + pow(this->y - another.y, 2));
+    }
+};
+
+int main() {
+    // Thử nghiệm lớp Point
+    Point p1(3, 4);
+    Point p2;
+    p2.setXY(6, 8);
+
+    std::cout << "Khoảng cách từ p1 đến p2: " << p1.distance(p2) << std::endl;
+    std::cout << "Khoảng cách từ p1 đến (0,0): " << p1.distance(0, 0) << std::endl;
+
+    return 0;
+}

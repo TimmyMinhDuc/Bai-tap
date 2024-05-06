@@ -10,7 +10,6 @@ private:
   string color;
 
 public:
-  // Constructor
   Vehicle(string id, string brand, string model, int year, string color) {
     this->vehicleID = id;
     this->brand = brand;
@@ -19,14 +18,6 @@ public:
     this->color = color;
   }
 
-  // Getter
-  string getVehicleID() const { return vehicleID; }
-  string getBrand() const { return brand; }
-  string getModel() const { return model; }
-  int getYear() const { return year; }
-  string getColor() const { return color; }
-
-  // Bo sung
   void displayInfo() const {
     cout << "Vehicle ID: " << getVehicleID() << endl;
     cout << "Brand: " << getBrand() << endl;
@@ -36,13 +27,13 @@ public:
   }
 
   bool isVintage() const {
-    return (2024 - year) >= 25; // Check for vintage based on current year
+    return (2024 - year) >= 25; 
   }
 };
 
 int main() {
   // Tao doi tuong Mercedes-Benz
-  Vehicle mercedes("MB9923", "Mercedes-Benz", "Double-Gentle-Class", 2023, "Light Silver");
+  Vehicle mercedes("GB9923", "Mercedes-Benz", "Double-Gentle-Class", 2023, "Light Silver");
 
   // In thông tin ve xe Mercedes-Benz
   mercedes.displayInfo();

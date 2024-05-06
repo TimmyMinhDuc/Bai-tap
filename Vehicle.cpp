@@ -26,13 +26,6 @@ public:
   int getYear() const { return year; }
   string getColor() const { return color; }
 
-  // Setter
-  void setVehicleID(string id) { vehicleID = id; }
-  void setBrand(string brand) { this->brand = brand; }
-  void setModel(string model) { this->model = model; }
-  void setYear(int year) { this->year = year; }
-  void setColor(string color) { this->color = color; }
-
   // Bo sung
   void displayInfo() const {
     cout << "Vehicle ID: " << getVehicleID() << endl;

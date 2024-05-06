@@ -20,11 +20,16 @@ public:
   }
 
 	// Getter
-  string getVehicleID() const { return vehicleID; }
-  string getBrand() const { return brand; }
-  string getModel() const { return model; }
-  int getYear() const { return year; }
-  string getColor() const { return color; }
+  string getVehicleID() const { 
+	  return vehicleID; }
+  string getBrand() const { 
+	  return brand; }
+  string getModel() const { 
+	  return model; }
+  int getYear() const { 
+	  return year; }
+  string getColor() const { 
+	  return color; }
 
 	// Setter
   void displayInfo() const {

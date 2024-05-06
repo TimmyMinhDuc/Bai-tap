@@ -1,8 +1,6 @@
 #include <iostream>
 #include <string>
-
 using namespace std;
-
 class Vehicle {
 private:
   string vehicleID;
@@ -21,21 +19,21 @@ public:
     this->color = color;
   }
 
-  // Getter methods
+  // Getter
   string getVehicleID() const { return vehicleID; }
   string getBrand() const { return brand; }
   string getModel() const { return model; }
   int getYear() const { return year; }
   string getColor() const { return color; }
 
-  // Setter methods (optional)
+  // Setter
   void setVehicleID(string id) { vehicleID = id; }
   void setBrand(string brand) { this->brand = brand; }
   void setModel(string model) { this->model = model; }
   void setYear(int year) { this->year = year; }
   void setColor(string color) { this->color = color; }
 
-  // New methods:
+  // Bo sung
   void displayInfo() const {
     cout << "Vehicle ID: " << getVehicleID() << endl;
     cout << "Brand: " << getBrand() << endl;
@@ -50,17 +48,17 @@ public:
 };
 
 int main() {
-  // Create a Mercedes-Benz object
-  Vehicle mercedes("MB123", "Mercedes-Benz", "S-Class", 2023, "Silver");
+  // Tao doi tuong Mercedes-Benz
+  Vehicle mercedes("MB9923", "Mercedes-Benz", "Double-Gentle-Class", 2023, "Light Silver");
 
-  // Display information using the new method
+  // In thông tin ve xe Mercedes-Benz
   mercedes.displayInfo();
 
-  // Check if the Mercedes is vintage
+  // Kiem tra xem co phai xe cu khong
   if (mercedes.isVintage()) {
-    cout << mercedes.getBrand() << " " << mercedes.getModel() << " is a vintage car." << endl;
+    cout << mercedes.getBrand() << " " << mercedes.getModel() << " La xe cu." << endl;
   } else {
-    cout << mercedes.getBrand() << " " << mercedes.getModel() << " is not a vintage car." << endl;
+    cout << mercedes.getBrand() << " " << mercedes.getModel() << " Khong la xe cu." << endl;
   }
 
   return 0;
